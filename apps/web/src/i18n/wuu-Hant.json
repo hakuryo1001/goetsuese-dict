@@ -2,7 +2,7 @@
   "browse": {
     "title": "全部詞條",
     "description": "查看全部詞條",
-    "metaDescription": "瀏覽吳林全部詞條",
+    "metaDescription": "瀏覽吳語辭林全部詞條",
     "backHome": "返回首頁",
     "pageInputPrefix": "第",
     "pageInputSuffix": "頁",
@@ -18,7 +18,7 @@
     "goToPage": "前往"
   },
   "common": {
-    "siteName": "吳林",
+    "siteName": "吳語辭林",
     "siteSubtitle": "Open Wu Chinese Dictionary Collection Platform",
     "siteDescription": "開放的吳語詞典聚合平台",
     "metaDescription": "開放吳語詞典聚合平台，多詞典統一搜尋查詢、ngven搜索，吳語學習和研究者的便捷工具。",
@@ -28,7 +28,7 @@
     "github": "GitHub",
     "contributeData": "貢獻數據",
     "aboutProject": "關於項目",
-    "footerCopyright": "吳林 © 2025-2026 · 開源於",
+    "footerCopyright": "吳語辭林 © 2025-2026 · 開源於",
     "searchPlaceholder": "搜尋詞語或ngven...",
     "searchButton": "搜尋",
     "reverseSearch": "通過釋義反查",
@@ -185,11 +185,11 @@
   },
   "about": {
     "pageTitle": "關於",
-    "metaDescription": "了解吳林項目的使命、內容授權政策和技術架構。我們致力於打造開放、包容、可持續的吳語詞典聚合平台。",
-    "title": "關於吳林",
+    "metaDescription": "了解吳語辭林項目的使命、內容授權政策和技術架構。我們致力於打造開放、包容、可持續的吳語詞典聚合平台。",
+    "title": "關於吳語辭林",
     "subtitle": "Open Wu Chinese Dictionary Collection Platform - 開源吳語詞典聚合平台",
     "missionTitle": "使命",
-    "missionP1": "吳林致力於建立一個先進實用的吳語詞典平台，以現代技術傳承和推廣吳語文化。",
+    "missionP1": "吳語辭林致力於建立一個先進實用的吳語詞典平台，以現代技術傳承和推廣吳語文化。",
     "missionP2": "通過聚合多個來源的吳語詞典，我們為吳語學習者、研究者、愛好者提供一個方便且全面的查詢工具。",
     "backHome": "返回首頁",
     "licenseSectionTitle": "內容授權說明",
@@ -250,7 +250,7 @@
       "conditions2": "標明修改：如有修改，需要說明改動內容",
       "conditions3": "非商業性：不可將相關內容用於商業目的",
       "attributionExample": "署名格式示例：",
-      "attributionCode": "陳明. (2025). 吳語日常用語詞表. 吳林 (goetsuese)",
+      "attributionCode": "陳明. (2025). 吳語日常用語詞表. 吳語辭林 (goetsuese)",
       "qzTitle": "DINISHING 標準吳語詞庫 - {count} 條",
       "qzDesc": "社群標準吳語字詞表（DINISHING/vocabulary），含吳拼與釋義（若有）。",
       "qzAllowed1": "本地非商業學習與研究（上游未聲明授權）",
@@ -292,7 +292,7 @@
   },
   "feedback": {
     "title": "反饋",
-    "subtitle": "幫助我們改進吳林",
+    "subtitle": "幫助我們改進吳語辭林",
     "buttonTitle": "提交反饋",
     "buttonShort": "反饋",
     "type": {

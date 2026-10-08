@@ -1,5 +1,5 @@
 /**
- * 吳林 - 詞典數據類型定義
+ * 吳語辭林 - 詞典數據類型定義
  * Wulam - Dictionary Data Types
  *
  * @version 1.0.0

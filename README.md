@@ -1,4 +1,4 @@
-# 吳林 · Wulam
+# 吳語辭林 · Wulam
 
 Local Next.js Wu Chinese (吳語 / Goetsuese) dictionary workspace, structurally based on [Jyutlam](https://github.com/) (粵語彙林).
 
@@ -17,7 +17,9 @@ pnpm install
 pnpm dev
 ```
 
-Open http://localhost:3000
+Open http://localhost:3001
+
+The main app (`goetsuese-master-app-monorepo`) keeps `http://localhost:3000`, so the two dev servers can run at the same time.
 
 Dictionary data lives at `apps/web/data-dictionaries`. Override with `WULAM_DATA_DIR` if needed. The scaffold ships an empty `index.json` (`dictionaries: []`) so the app runs before any corpora are added.
 

@@ -93,3 +93,23 @@ body {
   color: var(--color-kapok);
   letter-spacing: 0;
 }
+
+/* Siauzy sitting over the homepage title, furigana-style. */
+.site-name-ruby {
+  ruby-position: over;
+  ruby-align: center;
+}
+
+.site-name-ruby ruby {
+  ruby-position: over;
+}
+
+.site-name-ruby rt {
+  font-family: "Goetsusioji", "Chiron Sung HK UI", serif;
+  font-size: 0.42em;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0;
+  line-height: 1;
+  color: var(--color-kapok);
+}

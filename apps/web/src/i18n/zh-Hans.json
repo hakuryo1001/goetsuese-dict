@@ -2,7 +2,7 @@
   "browse": {
     "title": "全部词条",
     "description": "查看全部词条",
-    "metaDescription": "浏览吴林全部词条",
+    "metaDescription": "浏览吴语辞林全部词条",
     "backHome": "返回首页",
     "pageInputPrefix": "第",
     "pageInputSuffix": "页",
@@ -18,7 +18,7 @@
     "goToPage": "前往"
   },
   "common": {
-    "siteName": "吴林",
+    "siteName": "吴语辞林",
     "siteSubtitle": "Open Wu Chinese Dictionary Collection Platform",
     "siteDescription": "开放的吴语词典聚合平台",
     "metaDescription": "开放吴语词典聚合平台，多词典统一搜寻查询、ngven搜索，吴语学习和研究者的便捷工具。",
@@ -28,7 +28,7 @@
     "github": "GitHub",
     "contributeData": "贡献数据",
     "aboutProject": "关于项目",
-    "footerCopyright": "吴林 © 2025-2026 · 开源于",
+    "footerCopyright": "吴语辞林 © 2025-2026 · 开源于",
     "searchPlaceholder": "搜寻词语或ngven...",
     "searchButton": "搜寻",
     "reverseSearch": "通过释义反查",
@@ -185,11 +185,11 @@
   },
   "about": {
     "pageTitle": "关于",
-    "metaDescription": "了解吴林项目的使命、内容授权政策和技术架构。我们致力于打造开放、包容、可持续的吴语词典聚合平台。",
-    "title": "关于吴林",
+    "metaDescription": "了解吴语辞林项目的使命、内容授权政策和技术架构。我们致力于打造开放、包容、可持续的吴语词典聚合平台。",
+    "title": "关于吴语辞林",
     "subtitle": "Open Wu Chinese Dictionary Collection Platform - 开源吴语词典聚合平台",
     "missionTitle": "使命",
-    "missionP1": "吴林致力于建立一个先进实用的吴语词典平台，以现代技术传承和推广吴语文化。",
+    "missionP1": "吴语辞林致力于建立一个先进实用的吴语词典平台，以现代技术传承和推广吴语文化。",
     "missionP2": "通过聚合多个来源的吴语词典，我们为吴语学习者、研究者、爱好者提供一个方便且全面的查询工具。",
     "backHome": "返回首页",
     "licenseSectionTitle": "内容授权说明",
@@ -250,7 +250,7 @@
       "conditions2": "标明修改：如有修改，需要说明改动内容",
       "conditions3": "非商业性：不可将相关内容用于商业目的",
       "attributionExample": "署名格式示例：",
-      "attributionCode": "陈明. (2025). 吴语日常用语词表. 吴林 (goetsuese)",
+      "attributionCode": "陈明. (2025). 吴语日常用语词表. 吴语辞林 (goetsuese)",
       "qzTitle": "DINISHING 标准吴语词库 - {count} 条",
       "qzDesc": "社群标准吴语字词表（DINISHING/vocabulary），含吴拼与释义（若有）。",
       "qzAllowed1": "本地非商业学习与研究（上游未声明授权）",
@@ -292,7 +292,7 @@
   },
   "feedback": {
     "title": "反馈",
-    "subtitle": "帮助我们改进吴林",
+    "subtitle": "帮助我们改进吴语辞林",
     "buttonTitle": "提交反馈",
     "buttonShort": "反馈",
     "type": {

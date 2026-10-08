@@ -5,7 +5,7 @@ import "@fontsource-variable/inter";
 import "./globals.css";
 
 export const metadata = {
-  title: "吳林 · Wulam",
+  title: "吳語辭林 · Wulam",
   description: "Local Next.js Wu Chinese dictionary with Goetsusioji",
 };
 

@@ -1,6 +1,6 @@
 "use client";
 
-import { FormEvent, useEffect, useState } from "react";
+import { Fragment, FormEvent, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import type { DictionaryEntry } from "@/lib/dictionary-types";
 import type { DictionaryMeta } from "@/lib/catalog-types";
@@ -13,9 +13,35 @@ import {
   ThemeToggle,
 } from "@/components/chrome";
 import { DictCard } from "@/components/dict-card";
-import { GoetsusiojiLine, GoetsusiojiRuby } from "@/components/goetsusioji-ruby";
+import { GoetsusiojiLine } from "@/components/goetsusioji-ruby";
 import { hanToGoetsusioji } from "@/lib/chinese-to-goetsusioji";
 import Link from "next/link";
+
+/** Siauzy for ngven wu ngiu zy lin, from the Goetsusioji lexicon. */
+const SITE_NAME_SIAUZY: Record<string, string> = {
+  吳: "\uF4E9",
+  吴: "\uF4E9",
+  語: "\uF2D1",
+  语: "\uF2D1",
+  辭: "\uF42A",
+  辞: "\uF42A",
+  林: "\uF196",
+};
+
+function SiteNameRuby({ text }: { text: string }) {
+  const chars = [...text];
+  if (!chars.every((char) => SITE_NAME_SIAUZY[char])) return text;
+  return (
+    <ruby>
+      {chars.map((char, index) => (
+        <Fragment key={`${char}-${index}`}>
+          {char}
+          <rt className="font-goetsusioji">{SITE_NAME_SIAUZY[char]}</rt>
+        </Fragment>
+      ))}
+    </ruby>
+  );
+}
 
 export default function HomePage() {
   const { t, locale } = useI18n();
@@ -86,8 +112,8 @@ export default function HomePage() {
             </span>
           </div>
           <div className="relative z-10 text-center max-w-3xl mx-auto">
-            <h1 className="text-5xl md:text-7xl font-headline text-ink dark:text-stone-100 mb-5">
-              <GoetsusiojiRuby text={t("common.siteName")} />
+            <h1 className="site-name-ruby text-5xl md:text-7xl font-headline text-ink dark:text-stone-100 mb-5">
+              <SiteNameRuby text={t("common.siteName")} />
             </h1>
             <RedDotDivider />
             <p className="text-xl font-serif">{t("common.siteSubtitle")}</p>

@@ -18,7 +18,7 @@
     "goToPage": "Go"
   },
   "common": {
-    "siteName": "吳林",
+    "siteName": "吳語辭林",
     "siteSubtitle": "Open Wu Chinese Dictionary Collection Platform",
     "siteDescription": "開源吳語詞典聚合平台",
     "metaDescription": "Open Wu Chinese dictionary platform with multi-dictionary search, ngven lookup, and comprehensive entries for learners and researchers.",
@@ -185,11 +185,11 @@
   },
   "about": {
     "pageTitle": "About",
-    "metaDescription": "Learn about 吳林's mission, content licensing policy, and technical stack. We are building an open, inclusive, and sustainable Wu Chinese dictionary platform.",
-    "title": "About 吳林",
+    "metaDescription": "Learn about 吳語辭林's mission, content licensing policy, and technical stack. We are building an open, inclusive, and sustainable Wu Chinese dictionary platform.",
+    "title": "About 吳語辭林",
     "subtitle": "Open Wu Chinese Dictionary Collection Platform - an open Wu Chinese dictionary platform",
     "missionTitle": "Mission",
-    "missionP1": "吳林 is building a practical, modern Wu Chinese dictionary platform that helps preserve and share Wu Chinese through contemporary technology.",
+    "missionP1": "吳語辭林 is building a practical, modern Wu Chinese dictionary platform that helps preserve and share Wu Chinese through contemporary technology.",
     "missionP2": "By bringing together Wu Chinese dictionaries from multiple sources, we provide learners, researchers, and language enthusiasts with one convenient and comprehensive lookup tool.",
     "backHome": "Back to home",
     "licenseSectionTitle": "Content licensing",
@@ -250,7 +250,7 @@
       "conditions2": "Mark changes: if you modify the content, you must describe the changes",
       "conditions3": "Non-commercial: the content may not be used commercially",
       "attributionExample": "Attribution example:",
-      "attributionCode": "陳明. (2025). 吳語日常用語詞表. 吳林 (goetsuese)",
+      "attributionCode": "陳明. (2025). 吳語日常用語詞表. 吳語辭林 (goetsuese)",
       "qzTitle": "DINISHING standard Wu vocabulary - {count} entries",
       "qzDesc": "Community standard-Wu word and character tables (DINISHING/vocabulary), with wugniu readings and glosses where present.",
       "qzAllowed1": "Local non-commercial study and research (license not stated upstream)",
