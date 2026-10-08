@@ -143,7 +143,11 @@
     "backToSearchResultsForCount": "返回「{query}」的搜尋結果（{count} 項）",
     "searchCurrentWord": "搜尋「{word}」",
     "viewCurrentWordResults": "查看「{word}」的搜尋結果",
-    "readingsTitle": "各地方音"
+    "readingsTitle": "各地方音",
+    "relatedTitle": "相關詞條",
+    "relatedCompounds": "複合詞",
+    "relatedSharedCharacters": "共字",
+    "relatedHomophones": "同音"
   },
   "dictCard": {
     "placeholderWord": "有音無字",

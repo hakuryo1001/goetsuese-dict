@@ -143,7 +143,11 @@
     "backToSearchResultsForCount": "Back to results for “{query}” ({count})",
     "searchCurrentWord": "Search “{word}”",
     "viewCurrentWordResults": "View results for “{word}”",
-    "readingsTitle": "Readings by dialect"
+    "readingsTitle": "Readings by dialect",
+    "relatedTitle": "Related entries",
+    "relatedCompounds": "Compounds",
+    "relatedSharedCharacters": "Shared characters",
+    "relatedHomophones": "Homophones"
   },
   "dictCard": {
     "placeholderWord": "Phonetic only",

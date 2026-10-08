@@ -6,7 +6,7 @@ export async function GET(
   context: { params: Promise<{ headword: string }> },
 ) {
   const { headword } = await context.params;
-  const limit = Number(request.nextUrl.searchParams.get("limit") || 12);
-  const entries = await relatedWords(decodeURIComponent(headword), limit);
-  return NextResponse.json({ success: true, entries });
+  const limit = Number(request.nextUrl.searchParams.get("limit") || 8);
+  const groups = await relatedWords(decodeURIComponent(headword), limit);
+  return NextResponse.json({ success: true, groups });
 }

@@ -5,6 +5,7 @@ import { useParams, useSearchParams } from "next/navigation";
 import { AppHeader, PronunciationRow, SiteFooter } from "@/components/chrome";
 import { useI18n } from "@/lib/i18n";
 import type { DictionaryEntry } from "@/lib/dictionary-types";
+import type { RelatedGroups, RelatedItem } from "@/lib/related-types";
 import {
   getPhoneticDisplayRows,
   getPhoneticDisplayRowsMapped,
@@ -15,6 +16,12 @@ import { definitionGoetsusioji } from "@/lib/chinese-to-goetsusioji";
 import { getClientGoetsusiojiMapper } from "@/lib/goetsusioji-client";
 import type { GoetsusiojiMapper } from "@wulam/goetsusioji";
 import Link from "next/link";
+
+const EMPTY_RELATED: RelatedGroups = {
+  compounds: [],
+  shared_characters: [],
+  homophones: [],
+};
 
 function PhoneticBlock({
   phonetic,
@@ -51,6 +58,38 @@ type ReadingGroup = {
   source?: string;
 };
 
+function RelatedGroupList({
+  title,
+  items,
+}: {
+  title: string;
+  items: RelatedItem[];
+}) {
+  if (!items.length) return null;
+  return (
+    <div>
+      <h3 className="text-sm font-medium text-graphite mb-2">{title}</h3>
+      <ul className="flex flex-wrap gap-x-4 gap-y-2">
+        {items.map((item) => (
+          <li key={item.headword}>
+            <Link
+              href={`/word/${encodeURIComponent(item.headword)}`}
+              className="inline-flex items-baseline gap-2 hover:text-kapok"
+            >
+              <span className="font-headline text-lg text-ink dark:text-stone-100">
+                {item.display}
+              </span>
+              {item.ngven ? (
+                <span className="font-mono text-sm text-kapok">{item.ngven}</span>
+              ) : null}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
 export default function WordPage() {
   const params = useParams<{ headword: string }>();
   const searchParams = useSearchParams();
@@ -58,6 +97,7 @@ export default function WordPage() {
   const [query, setQuery] = useState(searchParams.get("q") || params.headword);
   const [entries, setEntries] = useState<DictionaryEntry[]>([]);
   const [readings, setReadings] = useState<ReadingGroup[]>([]);
+  const [related, setRelated] = useState<RelatedGroups>(EMPTY_RELATED);
   const [canonical, setCanonical] = useState(params.headword);
   const [missing, setMissing] = useState(false);
   const [loaded, setLoaded] = useState(false);
@@ -72,6 +112,7 @@ export default function WordPage() {
   useEffect(() => {
     const headword = decodeURIComponent(params.headword);
     setLoaded(false);
+    setRelated(EMPTY_RELATED);
     fetch(`/api/word/${encodeURIComponent(headword)}`)
       .then(async (response) => {
         const payload = await response.json();
@@ -80,11 +121,27 @@ export default function WordPage() {
           setLoaded(true);
           return;
         }
-        setCanonical(payload.canonical_headword);
+        const canonicalHeadword =
+          payload.canonical_headword || headword;
+        setCanonical(canonicalHeadword);
         setEntries(payload.entries || []);
         setReadings(payload.readings || []);
         setMissing(false);
         setLoaded(true);
+
+        fetch(
+          `/api/word/${encodeURIComponent(canonicalHeadword)}/related?limit=8`,
+        )
+          .then(async (relatedResponse) => {
+            if (!relatedResponse.ok) return;
+            const relatedPayload = await relatedResponse.json();
+            if (relatedPayload.groups) {
+              setRelated(relatedPayload.groups);
+            }
+          })
+          .catch(() => {
+            /* related section stays empty */
+          });
       })
       .catch(() => {
         setMissing(true);
@@ -94,6 +151,10 @@ export default function WordPage() {
 
   const primary = entries[0];
   const title = primary?.headword.display || canonical;
+  const hasRelated =
+    related.compounds.length > 0 ||
+    related.shared_characters.length > 0 ||
+    related.homophones.length > 0;
 
   return (
     <div>
@@ -185,6 +246,27 @@ export default function WordPage() {
                 </section>
               ))}
             </div>
+            {hasRelated ? (
+              <section className="mt-12 pt-8 border-t border-outline-soft/40 dark:border-white/10">
+                <h2 className="font-headline text-2xl mb-6">
+                  {t("wordPage.relatedTitle")}
+                </h2>
+                <div className="space-y-6">
+                  <RelatedGroupList
+                    title={t("wordPage.relatedCompounds")}
+                    items={related.compounds}
+                  />
+                  <RelatedGroupList
+                    title={t("wordPage.relatedSharedCharacters")}
+                    items={related.shared_characters}
+                  />
+                  <RelatedGroupList
+                    title={t("wordPage.relatedHomophones")}
+                    items={related.homophones}
+                  />
+                </div>
+              </section>
+            ) : null}
             <p className="mt-8">
               <Link
                 className="text-kapok"

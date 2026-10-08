@@ -1,5 +1,6 @@
 import { readFile, readdir } from "node:fs/promises";
 import path from "node:path";
+import { removeTone } from "@wulam/goetsusioji";
 import type { DictionaryEntry } from "./dictionary-types";
 import type { DictionaryIndex, DictionaryMeta } from "./catalog-types";
 import { traditionalizeEntry } from "./traditionalize";
@@ -7,12 +8,54 @@ import { traditionalizeEntry } from "./traditionalize";
 export type { DictionaryIndex, DictionaryMeta, LocalizedString } from "./catalog-types";
 export { localizeField } from "./localize";
 
+/** Unique headword summary for related-entry lookup. */
+export interface HeadwordSummary {
+  key: string;
+  display: string;
+  bare: string;
+  ngven: string;
+}
+
 export interface Catalog {
   dictionaries: DictionaryMeta[];
   entries: DictionaryEntry[];
   byId: Map<string, DictionaryEntry>;
   byHeadword: Map<string, DictionaryEntry[]>;
+  /** Normalized headword key → summary (first entry wins for display/ngven). */
+  headwordSummaries: Map<string, HeadwordSummary>;
+  /** Han character → normalized headword keys that contain it. */
+  byCharacter: Map<string, Set<string>>;
+  /** Tone-stripped full ngven phrase → normalized headword keys. */
+  byNgven: Map<string, Set<string>>;
   sourceBookByDictId: Map<string, string>;
+}
+
+const HAN_CHAR = /\p{Script=Han}/u;
+
+/** Strip parentheses, brackets, and spaces for compound containment. */
+export function bareHeadword(text: string): string {
+  return String(text || "")
+    .replace(/[（）()【】\[\]「」『』\s·・．.]+/g, "")
+    .trim();
+}
+
+/** Tone-stripped space-joined ngven phrase. */
+export function normalizeNgvenPhrase(reading: string): string {
+  return String(reading || "")
+    .trim()
+    .toLowerCase()
+    .split(/\s+/)
+    .filter(Boolean)
+    .map((syl) => removeTone(syl))
+    .filter(Boolean)
+    .join(" ");
+}
+
+function addToIndex(map: Map<string, Set<string>>, key: string, headwordKey: string) {
+  if (!key || !headwordKey) return;
+  const bucket = map.get(key) || new Set<string>();
+  bucket.add(headwordKey);
+  map.set(key, bucket);
 }
 
 let catalogPromise: Promise<Catalog> | null = null;
@@ -59,6 +102,37 @@ function pushEntry(catalog: Catalog, entry: DictionaryEntry) {
     bucket.push(traditional);
     catalog.byHeadword.set(key, bucket);
   }
+
+  const display =
+    traditional.headword?.normalized ||
+    traditional.headword?.display ||
+    "";
+  const headwordKey = display.trim().toLowerCase();
+  if (!headwordKey) return;
+
+  const ngvenList = traditional.phonetic?.ngven || [];
+  const firstNgven = ngvenList.map((v) => String(v || "").trim()).find(Boolean) || "";
+
+  if (!catalog.headwordSummaries.has(headwordKey)) {
+    catalog.headwordSummaries.set(headwordKey, {
+      key: headwordKey,
+      display,
+      bare: bareHeadword(display),
+      ngven: firstNgven,
+    });
+  }
+
+  const bare = bareHeadword(display);
+  for (const ch of bare) {
+    if (HAN_CHAR.test(ch)) {
+      addToIndex(catalog.byCharacter, ch, headwordKey);
+    }
+  }
+
+  for (const reading of ngvenList) {
+    const phrase = normalizeNgvenPhrase(String(reading || ""));
+    if (phrase) addToIndex(catalog.byNgven, phrase, headwordKey);
+  }
 }
 
 async function loadChunkedEntries(
@@ -101,6 +175,9 @@ async function loadCatalog(): Promise<Catalog> {
     entries: [],
     byId: new Map(),
     byHeadword: new Map(),
+    headwordSummaries: new Map(),
+    byCharacter: new Map(),
+    byNgven: new Map(),
     sourceBookByDictId: new Map(),
   };
 
