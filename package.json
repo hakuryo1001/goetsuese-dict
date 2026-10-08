@@ -1,0 +1,18 @@
+{
+  "name": "wulam",
+  "private": true,
+  "packageManager": "pnpm@10.0.0",
+  "scripts": {
+    "dev": "pnpm --filter web dev",
+    "build": "pnpm --filter web build",
+    "start": "pnpm --filter web start",
+    "fetch-sources": "node scripts/fetch-sources.mjs",
+    "import:ionkaon": "node scripts/import/ionkaon-dictionary.mjs && node scripts/import/ionkaon-data.mjs",
+    "import:dinishing": "node scripts/import/dinishing-vocabulary.mjs && node scripts/import/dinishing-vocabulary-dialects.mjs",
+    "import:wiktionary": "node scripts/import/wiktionary-kaikki.mjs",
+    "import:readings": "node scripts/import/readings-layer.mjs",
+    "import": "pnpm import:ionkaon && pnpm import:dinishing && pnpm import:wiktionary && pnpm import:readings",
+    "build-index": "node scripts/build-index.mjs",
+    "harvest": "pnpm fetch-sources && pnpm import && pnpm build-index"
+  }
+}

@@ -1,0 +1,95 @@
+@import "tailwindcss";
+@source "./src/**/*.{ts,tsx}";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@font-face {
+  font-family: "Chiron Hei HK UI";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 200 900;
+  src: url("/fonts/chiron-hei-hk-ui.woff2") format("woff2-variations");
+}
+
+@font-face {
+  font-family: "Chiron Sung HK UI";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 200 900;
+  src: url("/fonts/chiron-sung-hk-ui.woff2") format("woff2-variations");
+}
+
+@font-face {
+  font-family: "Goetsusioji";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url("/fonts/goetsusioji.ttf") format("truetype");
+}
+
+@theme {
+  --color-kapok: #00247d;
+  --color-kapok-container: #d9e2f5;
+  --color-ink: #031632;
+  --color-parchment: #f4f6fb;
+  --color-graphite: #3d4454;
+  --color-archive-green: #4a6b5d;
+  --color-muted-gold: #725b35;
+  --color-surface-low: #eef1f7;
+  --color-surface-mid: #e6ebf4;
+  --color-surface-high: #dde4f0;
+  --color-surface-highest: #d3dced;
+  --color-outline-soft: #c3c9d6;
+  --color-navy: #07111f;
+  --color-navy-card: #0d1a2e;
+  --font-sans: "Inter Variable", sans-serif;
+  --font-cjk-ui: "Inter Variable", "Chiron Hei HK UI", sans-serif;
+  --font-serif: "Chiron Sung HK UI", serif;
+  --font-headline: "Chiron Sung HK UI", serif;
+  --font-goetsusioji: "Goetsusioji", "Chiron Sung HK UI", serif;
+  --font-mono: Consolas, Monaco, "Courier New", monospace;
+}
+
+html {
+  color-scheme: light dark;
+}
+
+html.dark {
+  color-scheme: dark;
+  --color-kapok: #8ab4ff;
+  --color-kapok-container: #1a2744;
+}
+
+body {
+  font-family: "Inter Variable", "Chiron Hei HK UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-cjk-ui {
+  font-family: "Inter Variable", "Chiron Hei HK UI", sans-serif;
+}
+
+.font-headline,
+.font-serif {
+  font-family: "Chiron Sung HK UI", serif;
+}
+
+.font-goetsusioji {
+  font-family: "Goetsusioji", "Chiron Sung HK UI", serif;
+}
+
+.gs-ruby {
+  ruby-position: over;
+  ruby-align: center;
+}
+
+.gs-ruby ruby {
+  ruby-position: over;
+}
+
+.gs-ruby rt {
+  font-family: "Goetsusioji", "Chiron Sung HK UI", serif;
+  font-size: 0.38em;
+  font-weight: 400;
+  color: var(--color-kapok);
+  letter-spacing: 0;
+}

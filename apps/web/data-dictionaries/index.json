@@ -1,0 +1,166 @@
+{
+  "dictionaries": [
+    {
+      "id": "ionkaon-dictionary",
+      "name": {
+        "en": "ionkaon/dictionary — Ningbo lexicon",
+        "zh-Hant": "ionkaon/dictionary — Ningbo lexicon",
+        "zh-Hans": "ionkaon/dictionary — Ningbo lexicon"
+      },
+      "dialect": "NB",
+      "entries_count": 20853,
+      "author": "ionkaon",
+      "chunked": true,
+      "chunk_dir": "ionkaon-dictionary",
+      "description": "CC BY 4.0. 詞表.tsv: headword, wugniu (兼容格式), page refs to 湯版/阿拉宁波话/朱版, 釋義, 備註. Derived from printed Ningbo dictionaries — keep derived_from.",
+      "license": "cc-by-4.0",
+      "source": "community_contributed",
+      "attribution": "https://github.com/ionkaon/dictionary",
+      "derived_from": [
+        "ala-ningbo-print",
+        "huose-shengxiang-ningbo",
+        "ningbo-fangyan-cidian-tang"
+      ],
+      "upstream_commit": "980a909dc89a9300d2e65c6021ecee3e303a83bb",
+      "catalogue_id": "ionkaon-dictionary"
+    },
+    {
+      "id": "ionkaon-data",
+      "name": {
+        "en": "ionkaon/data — Ningbo dictionary indices",
+        "zh-Hant": "ionkaon/data — Ningbo dictionary indices",
+        "zh-Hans": "ionkaon/data — Ningbo dictionary indices"
+      },
+      "dialect": "NB",
+      "entries_count": 34715,
+      "author": "ionkaon",
+      "chunked": true,
+      "chunk_dir": "ionkaon-data",
+      "description": "CC BY 4.0. Index TSVs (headword + reading + page). Few/no definition fields — import as wordlist with empty senses or page-only meta.",
+      "license": "cc-by-4.0",
+      "source": "community_contributed",
+      "attribution": "https://github.com/ionkaon/data",
+      "derived_from": [
+        "ala-ningbo-print",
+        "ningbo-fangyan-cidian-tang",
+        "xdhyfy-ningbo"
+      ],
+      "upstream_commit": "1a8b3d96a4beae6f930241ce344ee51ecf315fa6",
+      "catalogue_id": "ionkaon-data"
+    },
+    {
+      "id": "dinishing-vocabulary",
+      "name": {
+        "en": "DINISHING/vocabulary — Standard Wu vocabulary",
+        "zh-Hant": "DINISHING/vocabulary — Standard Wu vocabulary",
+        "zh-Hans": "DINISHING/vocabulary — Standard Wu vocabulary"
+      },
+      "dialect": "WUU",
+      "entries_count": 27629,
+      "author": "DINISHING",
+      "chunked": true,
+      "chunk_dir": "dinishing-vocabulary",
+      "description": "No LICENSE file. words.tsv has 釋義/英語/華語; chars-main has optional 釋義. Import with license=unknown attribution.",
+      "license": "unknown",
+      "source": "community_contributed",
+      "attribution": "https://github.com/DINISHING/vocabulary",
+      "upstream_commit": "05cdc65b49c4b9652eebfb69733295b1839c1c9e",
+      "catalogue_id": "dinishing-vocabulary"
+    },
+    {
+      "id": "dinishing-sucieu",
+      "name": {
+        "en": "DINISHING/vocabulary-dialects",
+        "zh-Hant": "DINISHING/vocabulary-dialects",
+        "zh-Hans": "DINISHING/vocabulary-dialects"
+      },
+      "dialect": "SZ",
+      "entries_count": 4181,
+      "author": "DINISHING",
+      "file": "dinishing-sucieu.json",
+      "description": "No LICENSE. sucieu.tsv 4185 lines with 释义/例句; vusik has 简要解释; ningpou-thong readings from 寧波方言詞典; shanghai-pott English defs.",
+      "license": "unknown",
+      "source": "community_contributed",
+      "attribution": "https://github.com/DINISHING/vocabulary-dialects",
+      "upstream_commit": "e72bdaea2074e72dfc17dab8ee2d89aa2faf8ca7",
+      "catalogue_id": "dinishing-vocabulary-dialects"
+    },
+    {
+      "id": "dinishing-vusik",
+      "name": {
+        "en": "DINISHING/vocabulary-dialects",
+        "zh-Hant": "DINISHING/vocabulary-dialects",
+        "zh-Hans": "DINISHING/vocabulary-dialects"
+      },
+      "dialect": "SZ",
+      "entries_count": 6137,
+      "author": "DINISHING",
+      "file": "dinishing-vusik.json",
+      "description": "No LICENSE. sucieu.tsv 4185 lines with 释义/例句; vusik has 简要解释; ningpou-thong readings from 寧波方言詞典; shanghai-pott English defs.",
+      "license": "unknown",
+      "source": "community_contributed",
+      "attribution": "https://github.com/DINISHING/vocabulary-dialects",
+      "upstream_commit": "e72bdaea2074e72dfc17dab8ee2d89aa2faf8ca7",
+      "catalogue_id": "dinishing-vocabulary-dialects"
+    },
+    {
+      "id": "dinishing-ningpou-thong",
+      "name": {
+        "en": "DINISHING/vocabulary-dialects",
+        "zh-Hant": "DINISHING/vocabulary-dialects",
+        "zh-Hans": "DINISHING/vocabulary-dialects"
+      },
+      "dialect": "SZ",
+      "entries_count": 10373,
+      "author": "DINISHING",
+      "file": "dinishing-ningpou-thong.json",
+      "description": "No LICENSE. sucieu.tsv 4185 lines with 释义/例句; vusik has 简要解释; ningpou-thong readings from 寧波方言詞典; shanghai-pott English defs.",
+      "license": "unknown",
+      "source": "community_contributed",
+      "attribution": "https://github.com/DINISHING/vocabulary-dialects",
+      "upstream_commit": "e72bdaea2074e72dfc17dab8ee2d89aa2faf8ca7",
+      "catalogue_id": "dinishing-vocabulary-dialects"
+    },
+    {
+      "id": "dinishing-shanghai-pott",
+      "name": {
+        "en": "DINISHING/vocabulary-dialects",
+        "zh-Hant": "DINISHING/vocabulary-dialects",
+        "zh-Hans": "DINISHING/vocabulary-dialects"
+      },
+      "dialect": "SZ",
+      "entries_count": 1385,
+      "author": "DINISHING",
+      "file": "dinishing-shanghai-pott.json",
+      "description": "No LICENSE. sucieu.tsv 4185 lines with 释义/例句; vusik has 简要解释; ningpou-thong readings from 寧波方言詞典; shanghai-pott English defs.",
+      "license": "unknown",
+      "source": "community_contributed",
+      "attribution": "https://github.com/DINISHING/vocabulary-dialects",
+      "upstream_commit": "e72bdaea2074e72dfc17dab8ee2d89aa2faf8ca7",
+      "catalogue_id": "dinishing-vocabulary-dialects"
+    },
+    {
+      "id": "wiktionary-wu",
+      "name": {
+        "en": "Kaikki English Wiktionary dump",
+        "zh-Hant": "Kaikki English Wiktionary dump",
+        "zh-Hans": "Kaikki English Wiktionary dump"
+      },
+      "dialect": "WUU",
+      "entries_count": 5630,
+      "author": "Tatu Ylonen / Kaikki",
+      "file": "wiktionary-wu.json",
+      "description": "Import via Kaikki English dump filtered for wuu + nested Wu pronunciations. CC BY-SA 4.0.",
+      "license": "cc-by-sa-4.0",
+      "source": "community_contributed",
+      "attribution": "https://kaikki.org/",
+      "derived_from": [
+        "wiktionary-en-wu"
+      ],
+      "catalogue_id": "kaikki-en"
+    }
+  ],
+  "last_updated": "2026-10-08",
+  "schema_version": "1",
+  "readings_manifest": "readings/manifest.json"
+}

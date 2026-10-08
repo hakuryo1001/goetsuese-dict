@@ -1,0 +1,17 @@
+node_modules
+.next
+.turbo
+dist
+*.log
+.DS_Store
+.env
+.env.*
+apps/web/.next
+vendor
+apps/web/data-dictionaries/*.json
+!apps/web/data-dictionaries/index.json
+apps/web/data-dictionaries/readings/*
+!apps/web/data-dictionaries/readings/.gitkeep
+apps/web/data-dictionaries/dinishing-*
+apps/web/data-dictionaries/ionkaon-*
+apps/web/data-dictionaries/wiktionary-*
